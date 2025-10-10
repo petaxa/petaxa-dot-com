@@ -1,0 +1,71 @@
+@import "./reset.css";
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+:root {
+  --color-primary-base: #c2bec4;
+}
+
+:root {
+  --typography-h1-size: 24px;
+  --typography-h1-line-height: 36px;
+  --typography-h2-size: 22px;
+  --typography-h2-line-height: 33px;
+  --typography-h3-size: 20px;
+  --typography-h3-line-height: 30px;
+  --typography-body1-size: 20px;
+  --typography-body1-line-height: 30px;
+  --typography-body2-size: 18px;
+  --typography-body2-line-height: 23px;
+  --typography-body3-size: 17px;
+  --typography-body3-line-height: 21.5px;
+  --typography-caption-size: 15px;
+  --typography-caption-line-height: 19.5px;
+
+  @media (--mobile) {
+    --typography-h1-size: 18px;
+    --typography-h1-line-height: 27px;
+    --typography-h2-size: 16px;
+    --typography-h2-line-height: 24px;
+    --typography-h3-size: 14px;
+    --typography-h3-line-height: 21px;
+    --typography-body1-size: 14px;
+    --typography-body1-line-height: 21px;
+    --typography-body2-size: 12px;
+    --typography-body2-line-height: 18px;
+    --typography-body3-size: 11px;
+    --typography-body3-line-height: 15px;
+    --typography-caption-size: 10px;
+    --typography-caption-line-height: 15px;
+  }
+}
+
+:root {
+  /* align to BODY1 */
+  * {
+    font-size: var(--typography-body1-size);
+    line-height: var(--typography-body1-line-height);
+  }
+
+  h1 {
+    font-size: var(--typography-h1-size);
+    line-height: var(--typography-h1-line-height);
+  }
+
+  h2 {
+    font-size: var(--typography-h2-size);
+    line-height: var(--typography-h2-line-height);
+  }
+
+  h3 {
+    font-size: var(--typography-h3-size);
+    line-height: var(--typography-h3-line-height);
+  }
+}
+
+:root {
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}
