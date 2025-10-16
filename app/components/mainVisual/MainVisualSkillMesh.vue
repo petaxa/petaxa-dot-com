@@ -3,7 +3,7 @@ import { SRGBColorSpace, TextureLoader } from 'three'
 import { shallowRef, watchEffect, type TresObject, useLoop, useLoader } from '#imports';
 
 const props = defineProps<{
-  // position: [number, number, number]
+  position: [number, number, number]
   pause: boolean
 }>()
 
@@ -102,6 +102,8 @@ watchEffect(() => {
 </script>
 
 <template>
-  <TresBoxGeometry :args="[1, 1, 1]" />
-  <TresMeshLambertMaterial v-if="texture" :map="texture" :transparent="true" :opacity="textureOpacity" />
+  <TresMesh ref="boxRef" :position="props.position">
+    <TresBoxGeometry :args="[1, 1, 1]" />
+    <TresMeshStandardMaterial v-if="texture" :map="texture" :transparent="true" :opacity="textureOpacity" />
+  </TresMesh>
 </template>
