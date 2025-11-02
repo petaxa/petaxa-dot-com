@@ -3,53 +3,19 @@ import { FooterList } from '#components';
 
 const LIST_MAP = [
   {
-    title: "サイトマップ",
-    lists: [
-      {
-        text: "経歴",
-        url: "/hoge",
-        isExternal: false
-      },
-      {
-        text: "技術的なアウトプット",
-        url: "/hoge",
-        isExternal: false
-      },
-      {
-        text: "作ったプロダクト",
-        url: "/hoge",
-        isExternal: false
-      },
-      {
-        text: "好きなもの",
-        url: "/hoge",
-        isExternal: false
-      },
-    ]
-  },
-  {
-    title: "ブログ",
-    lists: [
-      {
-        text: "blog.petaxa.com",
-        url: "/hoge",
-        isExternal: true
-      },
-      {
-        text: "recipe.petaxa.com",
-        url: "/hoge",
-        isExternal: true
-      },
-    ]
-  },
-  {
     title: "コンタクト",
     lists: [
       {
         text: "@damenamepu",
-        url: "/hoge",
-        isExternal: false,
+        url: "https://x.com/damenamepu",
+        isExternal: true,
         icon: "simple-icons:x"
+      },
+      {
+        text: "@petaxa",
+        url: "https://github.com/petaxa",
+        isExternal: true,
+        icon: "simple-icons:github"
       },
     ]
   },
@@ -62,7 +28,9 @@ const LIST_MAP = [
       <div class="logo">
         <NuxtLink to="/">petaxa.com</NuxtLink>
       </div>
-      <FooterList v-for="list in LIST_MAP" :title="list.title" :lists="list.lists" />
+      <div class="content">
+        <FooterList v-for="list in LIST_MAP" :title="list.title" :lists="list.lists" />
+      </div>
     </div>
   </footer>
 </template>
@@ -71,7 +39,6 @@ const LIST_MAP = [
 .footer {
   margin-top: 5rem;
   display: flex;
-  justify-content: space-between;
   width: 100%;
   padding: 3rem;
   background-color: var(--color-primary-base);
@@ -88,5 +55,11 @@ const LIST_MAP = [
   font-size: 1.6rem;
   font-weight: bold;
   text-decoration: none;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 </style>

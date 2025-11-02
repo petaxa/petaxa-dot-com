@@ -1,13 +1,24 @@
 <script setup lang="ts">
 import { MainSection, NuxtLink } from '#components';
 import TechCard from '~/components/card/TechCard.vue';
+
+const items = [
+  {
+    title: "🚧レシピブログを書きたい！🚧",
+    url: "https://recipie.petaxa.com",
+    image: ""
+  }, {
+    title: "🚧興味に対する雑記を書くところがほしい！🚧",
+    url: "https://blog.petaxa.com",
+    image: ""
+  }
+]
 </script>
 
 <template>
   <MainSection title="ブログ">
     <div class="card-list">
-      <TechCard v-for="i in 2" content-url="https://zenn.dev/petaxa/articles/613511297de2ff"
-        :image-url="i % 2 === 0 ? '/image.png' : null" content-title="ComfyUIで出力先フォルダを変更する" />
+      <TechCard v-for="item in items" :content-url="item.url" :image-url="item.image" :content-title="item.title" />
     </div>
   </MainSection>
 </template>

@@ -9,7 +9,7 @@ const { productUrl, imageUrl, productTitle, productDescription } = defineProps<{
 
 <template>
   <div class="wrapper">
-    <NuxtLink :to="productUrl">
+    <NuxtLink :to="productUrl" target="_blank">
       <div class="output-container">
         <img class="product-image" :src="imageUrl" alt="">
         <p class="title">{{ productTitle }}</p>

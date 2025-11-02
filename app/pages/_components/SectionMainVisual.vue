@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { MainVisual } from '#components';
-const pause = false
+import { useAnimationStore } from '~/stores/animations';
+
+const [isAnimationEnabled] = useAnimationStore()
 </script>
 
 <template>
   <section>
     <div class="section-content">
-      <MainVisual :pause />
+      <MainVisual :isAnimationEnabled />
     </div>
   </section>
 </template>

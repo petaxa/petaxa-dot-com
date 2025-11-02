@@ -8,7 +8,7 @@ const { contentUrl, imageUrl, contentTitle } = defineProps<{
 
 <template>
   <div class="output-container">
-    <NuxtLink :to="contentUrl">
+    <NuxtLink :to="contentUrl" target="_blank">
       <img v-if="imageUrl" :src="imageUrl" alt="">
       <span v-else>{{ contentTitle }}</span>
     </NuxtLink>
@@ -19,7 +19,6 @@ const { contentUrl, imageUrl, contentTitle } = defineProps<{
 .output-container {
   width: 24rem;
   aspect-ratio: 1.91 / 1;
-  background-color: var(--color-primary-base);
   display: flex;
   justify-content: center;
   align-items: center;
