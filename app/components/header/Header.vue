@@ -1,28 +1,22 @@
 <script setup lang="ts">
 import { UIcon } from '#components';
-import { computed, ref, useWindowScroll } from "#imports"
+import { useAnimationStore } from '~/stores/animations';
 
-const { y: scrollY } = useWindowScroll()
-const isVisibleHeader = computed<boolean>(() => scrollY.value > 90)
-
-const animationEnabled = ref(false)
-function setAnimationEnabled(value: boolean) {
-  animationEnabled.value = value
-}
+const [isAnimationEnabled, setAnimationEnabled] = useAnimationStore()
 </script>
 
 <template>
   <header>
     <Transition name="fade">
-      <div v-show="isVisibleHeader" class="header">
+      <div class="header">
         <NuxtLink class="logo" to="/">petaxa.com</NuxtLink>
         <div class="header-controller">
           <div class="controller-item">
-            <button type="button" :aria-label="animationEnabled ? 'アニメーションを停止' : 'アニメーションを再生'"
-              @click="setAnimationEnabled(!animationEnabled)">
-              <UIcon :name="animationEnabled ? 'i-lucide-circle-pause' : 'i-lucide-circle-play'" class="size-5"
-                :aria-label="animationEnabled ? 'アニメーションを停止' : 'アニメーションを再生'" />
-              <span>{{ animationEnabled ? '停止する' : '再生する' }}</span>
+            <button type="button" :aria-label="isAnimationEnabled ? 'アニメーションを停止' : 'アニメーションを再生'"
+              @click="setAnimationEnabled(!isAnimationEnabled)">
+              <UIcon :name="isAnimationEnabled ? 'i-lucide-circle-pause' : 'i-lucide-circle-play'" class="size-5"
+                :aria-label="isAnimationEnabled ? 'アニメーションを停止' : 'アニメーションを再生'" />
+              <span>{{ isAnimationEnabled ? '停止する' : '再生する' }}</span>
             </button>
           </div>
         </div>
@@ -32,6 +26,13 @@ function setAnimationEnabled(value: boolean) {
 </template>
 
 <style scoped>
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--color-primary-base);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -39,9 +40,6 @@ function setAnimationEnabled(value: boolean) {
   height: 3rem;
   align-items: center;
   padding: 0 3rem;
-  background-color: var(--color-primary-base);
-  position: fixed;
-  z-index: 999;
 }
 
 .logo {
@@ -75,6 +73,7 @@ button {
 .fade-leave-active {
   transition: opacity 0.5s;
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;

@@ -16,10 +16,10 @@ const { title, lists } = defineProps<{
     <h3>{{ title }}</h3>
     <ul>
       <li v-for="list in lists">
-        <NuxtLink :to="list.url">
-          <UIcon v-if="list.icon" :name="list.icon" class="size-5" aria-label="Xアイコン" />{{
+        <NuxtLink :to="list.url" :target="list.isExternal ? '_blank' : ''">
+          <UIcon v-if="list.icon" :name="list.icon" class="size-4" />{{
             list.text }}
-          <UIcon v-if="list.isExternal" :name="'i-lucide-external-link'" class="size-5" aria-label="Xアイコン" />
+          <UIcon v-if="list.isExternal" :name="'i-lucide-external-link'" class="size-5" />
         </NuxtLink>
       </li>
     </ul>
@@ -29,5 +29,6 @@ const { title, lists } = defineProps<{
 <style scoped>
 h3 {
   font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 </style>

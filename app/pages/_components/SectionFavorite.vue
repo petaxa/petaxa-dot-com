@@ -10,6 +10,7 @@ import { MainSection } from '#components';
         <li>サッカー</li>
         <li>スキー</li>
         <li>料理</li>
+        <li>etc...</li>
       </ul>
     </div>
     <NuxtLink to="/favorite">
@@ -25,9 +26,16 @@ import { MainSection } from '#components';
   flex-wrap: wrap;
   gap: 2rem;
   padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card-list ul {
+  display: flex;
+  gap: 1rem;
 }
 
 .card-list li {
-  font-size: var(--typography-h1-size)
+  font-size: var(--typography-h1-size);
+
 }
 </style>

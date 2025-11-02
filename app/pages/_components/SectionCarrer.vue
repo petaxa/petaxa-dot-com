@@ -9,10 +9,6 @@ import { MainSection, NuxtLink, UIcon } from '#components';
     <p>高校生くらいから浅くコードを書き始めました</p>
     <p>大学入学と同時にアルバイトでコードを書き始めました</p>
     <p>2026新卒でWeb系の事業会社に勤めています(予定)</p>
-    <NuxtLink to="/carrer">
-      <span>経歴ページへ</span>
-      <UIcon :name="'i-lucide-chevron-right'" class="size-5" />
-    </NuxtLink>
   </MainSection>
 </template>
 
