@@ -6,6 +6,9 @@
   --color-primary-base: #c2bec4;
 }
 
+@custom-media --mobile (max-width: 1036px);
+
+
 :root {
   --typography-h1-size: 24px;
   --typography-h1-line-height: 36px;
