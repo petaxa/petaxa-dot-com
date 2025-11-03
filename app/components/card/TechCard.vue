@@ -9,7 +9,7 @@ const { contentUrl, imageUrl, contentTitle } = defineProps<{
 <template>
   <div class="output-container">
     <NuxtLink :to="contentUrl" target="_blank">
-      <img v-if="imageUrl" :src="imageUrl" alt="">
+      <img v-if="imageUrl" :src="imageUrl" :alt="contentTitle">
       <span v-else>{{ contentTitle }}</span>
     </NuxtLink>
   </div>

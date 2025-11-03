@@ -8,8 +8,9 @@ const pointLight = ref()
 
 <template>
   <ClientOnly>
-    <TresCanvas :antialias="false" powerPreference="high-performance" :dpr="[1, 1.5]" clearColor="#000000">
-      <MainVisualLetter :isAnimationEnabled/>
+    <TresCanvas :antialias="false" powerPreference="high-performance" :dpr="[1, 1.5]" clearColor="#000000"
+      :aria-label="isAnimationEnabled ? 'petaxaに関するテキストが順に切り替わりながら3Dで表示されている' : 'petaxaに関するテキストが3Dで表示されている'">
+      <MainVisualLetter :isAnimationEnabled />
       <TresPerspectiveCamera :position="[0, 0, 8]" :look-at="[0, 0, 0]" :args="[110, 1, 0.1, 1000]" />
       <TresAmbientLight :intensity="1.0" color="white" />
 

@@ -15,11 +15,11 @@ import { NuxtLink, UIcon, MainSection } from '#components';
         </div>
         <div class="sns">
           <NuxtLink to="https://github.com/petaxa" external target="_blank">
-            <UIcon :name="'simple-icons:github'" class="size-5" aria-label="GitHubアイコン" />
+            <UIcon :name="'simple-icons:github'" class="size-5" />
             <span>GitHub: @petaxa</span>
           </NuxtLink>
           <NuxtLink to="https://x.com/damenamepu" external target="_blank">
-            <UIcon :name="'simple-icons:x'" class="size-5" aria-label="Xアイコン" />
+            <UIcon :name="'simple-icons:x'" class="size-5" />
             <span>X: @damenamepu</span>
           </NuxtLink>
         </div>
